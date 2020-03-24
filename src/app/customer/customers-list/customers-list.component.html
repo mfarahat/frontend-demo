@@ -16,11 +16,16 @@
         <td mat-cell *matCellDef="let element">{{element.lastName}}</td>
     </ng-container>
 
-    <ng-container matColumnDef="totalPurchases">
-        <th mat-header-cell *matHeaderCellDef>Total Purchases</th>
-        <td mat-cell *matCellDef="let element">{{element.totalPurchases | currency}}</td>
+    <ng-container matColumnDef="purchasesTotalValue">
+        <th mat-header-cell *matHeaderCellDef>Total Purchases Value</th>
+        <td mat-cell *matCellDef="let element">{{element.purchasesTotalValue | currency}}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="purchasesCount">
+        <th mat-header-cell *matHeaderCellDef>Purchases Count</th>
+        <td mat-cell *matCellDef="let element">{{element.purchasesCount}}</td>
     </ng-container>
 
     <tr mat-header-row *matHeaderRowDef="displayedCols"></tr>
-    <tr mat-row *matRowDef="let row; columns: displayedCols;"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedCols;" [routerLink]="['/customers/', row.id]"></tr>
 </table>

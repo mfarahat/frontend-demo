@@ -2,5 +2,6 @@ export interface ICustomer {
     id: number;
     firstName: string;
     lastName: string;
-    totalPurchases: number;
+    purchasesTotalValue: number;
+    purchasesCount: number;
 }
